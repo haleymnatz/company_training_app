@@ -11,9 +11,13 @@ class CompaniesController < ApplicationController
     json_for_object(Company.modern_plan_level_companies)
   end
 
+  def not_trialing
+    json_for_object(Company.not_actively_trialing)
+  end
+
   private
 
   def json_for_object(object)
-    render json: object
+    render json: object.as_json
   end
 end

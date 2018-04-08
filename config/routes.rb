@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     collection do
       get 'alphabetically'
       get 'with_modern_plan'
+      get 'not_trialing'
     end
   end
 end
