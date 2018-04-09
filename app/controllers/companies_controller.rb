@@ -15,6 +15,10 @@ class CompaniesController < ApplicationController
     json_for_object(Company.not_actively_trialing)
   end
 
+  def created_last_month
+    json_for_object(Company.from_last_month)
+  end
+
   private
 
   def json_for_object(object)

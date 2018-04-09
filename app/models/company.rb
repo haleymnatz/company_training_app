@@ -18,4 +18,9 @@ class Company < ApplicationRecord
   def self.not_actively_trialing
     Company.where.not(trial_status: 'active')
   end
+
+  def self.from_last_month
+    last_month_range = Date.today.last_month.beginning_of_month..Date.today.last_month.end_of_month
+    Company.where(created_at: last_month_range)
+  end
 end
